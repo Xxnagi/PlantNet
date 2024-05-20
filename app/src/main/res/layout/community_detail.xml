@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="128dp"
+        android:src="@drawable/square"/>
+
+    <ImageView
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:id="@+id/border"
+        android:layout_marginTop="70dp"
+        android:background="@drawable/circle"
+        android:backgroundTint="@color/white"
+        android:layout_centerHorizontal="true"
+        />
+
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:id="@+id/CommunityLogo"
+        android:layout_marginTop="77dp"
+        android:background="@drawable/circle"
+        android:layout_centerHorizontal="true"
+        />
+
+    <TextView
+        android:id="@+id/communityName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/CommunityLogo"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
+        android:textSize="24sp"
+        android:textColor="@android:color/black" />
+
+    <GridLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/communityName"
+        android:columnCount="3"
+        android:rowCount="1"
+        android:id="@+id/communityStatus"
+        android:layout_marginTop="16dp"
+        android:orientation="horizontal"
+        android:padding="16dp">
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/wrapper"
+                android:layout_centerHorizontal="true">
+                <ImageView
+                    android:id="@+id/audienceImage1"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/audience"
+                    />
+                <TextView
+                    android:id="@+id/audienceCount1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="4dp"
+                    android:textSize="14sp"
+                    android:text="100"
+                    android:textStyle="bold"/>
+            </LinearLayout>
+            <TextView
+                android:id="@+id/membersLabel1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/wrapper"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"
+                android:text="Members"
+                android:textColor="#2D9596"
+                android:textSize="12sp"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1">
+            <ImageView
+                android:id="@+id/audienceImage2"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/chat"
+                android:layout_centerHorizontal="true"/>
+
+            <TextView
+                android:id="@+id/membersLabel2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/audienceImage2"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"
+                android:text="Message"
+                android:textColor="#2D9596"
+                android:textSize="12sp"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1">
+            <ImageView
+                android:id="@+id/audienceImage3"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/logout"
+                android:layout_centerHorizontal="true"/>
+
+            <TextView
+                android:id="@+id/membersLabel3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/audienceImage3"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"
+                android:text="Leave"
+                android:textColor="#2D9596"
+                android:textSize="12sp"/>
+        </RelativeLayout>
+
+    </GridLayout>
+
+<!--    <LinearLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:orientation="horizontal"-->
+<!--        android:gravity="center"-->
+<!--        android:id="@+id/communityContent"-->
+<!--        android:layout_below="@+id/communityStatus">-->
+
+<!--        <Button-->
+<!--            android:id="@+id/btnPost"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="Post"/>-->
+
+<!--        <Button-->
+<!--            android:id="@+id/btnAbout"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="About"/>-->
+<!--    </LinearLayout>-->
+
+
+        <com.google.android.material.tabs.TabLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/communityTab"
+            android:layout_below="@+id/communityStatus">
+
+            <com.google.android.material.tabs.TabItem
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Posts"
+                android:id="@+id/tabPosts"/>
+
+            <com.google.android.material.tabs.TabItem
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="About"
+                android:id="@+id/tabAbout"/>
+
+        </com.google.android.material.tabs.TabLayout>
+
+        <FrameLayout
+            android:id="@+id/frameLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/communityTab"
+            android:layout_marginTop="16dp">
+
+            <!-- Main Container -->
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/viewPost"
+                android:visibility="visible"/>
+
+            <LinearLayout
+                android:id="@+id/viewAbout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:visibility="gone">
+
+                <!-- Add content for viewAbout here -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="This is the About view"/>
+            </LinearLayout>
+        </FrameLayout>
+</RelativeLayout>
